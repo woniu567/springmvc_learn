@@ -1,0 +1,26 @@
+<build>
+　　<plugins>
+　　　　<!--jetty调试 jetty:run -->
+　　　　<plugin>
+　　　　　　<groupId>org.eclipse.jetty</groupId>
+　　　　　　<artifactId>jetty-maven-plugin</artifactId>
+　　　　　　<version>9.4.8.v20171121</version>
+　　　　　　<configuration>
+　　　　　　　　<!--<war>${project.basedir}/target/pa-appmanage.war</war> -->
+　　　　　　　　<!-- 指定web页面的文件夹 -->
+　　　　　　　　<webAppSourceDirectory>${project.basedir}/src/main/webapp</webAppSourceDirectory>
+　　　　　　　　<stopPort>8</stopPort>
+　　　　　　　　<stopKey>stop</stopKey>
+　　　　　　　　<stopWait>5</stopWait>
+　　　　　　　　<httpConnector>
+　　　　　　　　　　<port>88</port>
+　　　　　　　　</httpConnector>
+　　　　　　　　<webAppConfig>
+　　　　　　　　　　<!--配置工程的虚拟目录名 -->
+　　　　　　　　　　<contextPath>/${project.artifactId}</contextPath>
+　　　　　　　　</webAppConfig>
+　　　　</configuration>
+　　　　</plugin>
+　　</plugins>
+　　<finalName>mytest</finalName>
+</build>
